@@ -1,0 +1,265 @@
+---
+name: "Normal Human" # Characters Superhero Name
+public_name: "Normal Guy" # Characters Actual Name
+date_created: "" # YYYY-MM-DD
+last_updated: "" # YYYY-MM-DD
+concept: "Normal NPC representing baseline human capabilities"
+aliases:
+  - "Average Joe"
+  - "Civilian"
+status: "Alive" # Character's current state: Alive, Dead, Unknown, Retired, etc.
+lethality: "Does not typically kill" # Narrative description of killing intent/capability
+age: "21"
+sex: "Male"
+species: "Human"
+physical_description: #The Height And Weight Should Give Imperial & Metric Mesurements
+  height: "5'9 ft / 1.73 m"
+  weight: "120 lbs / 54.431kg"
+  eye_color: "Brown"
+  hair_color: "Black"
+job: # This is the jobs the character has had or currently has
+  - "Worker"
+personality:
+  - "Smart"
+  - "Strange"
+  - "Stoic"
+mbti_type: "INTJ" # Optional: Myers-Briggs Type Indicator
+languages:
+  - "English"
+  # - "Japanese"
+  # - "French"
+attributes: # Hero System 6th Edition Characteristics
+  STR: 10
+  DEX: 10
+  CON: 10
+  INT: 10
+  EGO: 10
+  PRE: 10
+defense_values: # Base Defenses (Figured)
+  PD: 2
+  ED: 2
+  rPD: 0 # Resistant Physical Defense
+  rED: 0 # Resistant Energy Defense
+combat_values: # Base Combat Values (Figured)
+  OCV: 3
+  DCV: 3
+  OMCV: 3 # Offensive Mental Combat Value
+  DMCV: 3 # Defensive Mental Combat Value
+recovery_endurance: # Figured Characteristics
+  REC: 4
+  END: 20
+health_values: # Figured Characteristics
+  BODY: 10
+  STUN: 20
+movement: # Base Movement (Figured)
+  running: 12 # meters per Phase
+  swimming: 4 # meters per Phase
+  leaping: 4  # meters forward
+spd: 2 # Speed (Characteristic)
+power_ratings: # Power Scaling & Classification
+  strength: 1 # Manual Rating (1-10 scale): 1 = None/Negligible
+  intelligence: 1 # Manual Rating (1-10 scale): 1 = None/Negligible
+  speed: 1 # Manual Rating (1-10 scale): 1 = None/Negligible
+  durability: 1 # Manual Rating (1-10 scale): 1 = None/Negligible
+  energy_projection: 1 # Manual Rating (1-10 scale): 1 = None/Negligible
+  fighting_skills: 1 # Manual Rating (1-10 scale): 1 = None/Negligible
+  x-factor: 1 # Manual Rating (1-10 scale): 1 = None/Negligible
+  overall_rating: "Delta" # Manual Overall Rating (Delta, Gamma, Beta, Alpha, Omega)
+awarness: "Level of awarness of the multiverse and the universe as a whole"
+tags: # Obsidian Tags (Following provided system)
+  - "#universe/superhero"
+  - "#type/npc"
+  - "#setting/superhero-universe"
+  - "#status/active"
+  - "#npc/status/alive"
+  - "#npc/sex/male"
+  - "#npc/age/young-adult"
+  - "#npc/species/human"
+  - "#job/worker"
+  - "#scope/local"
+  - "#npc/affiliation/none"
+  - "#superhero/rank/e"
+  - "#superhero/class/1"
+  - "#superhero/origin/none"
+  - "#superhero/power/none"
+  - "#superhero/alignment/neutral"
+  - "#superhero/identity/public"
+  - "#superhero/status/unregistered"
+  - "#superhero/role/civilian"
+  - "#superhero/era/2000-present"
+  - "#superhero/location/empire-city"
+  - "#superhero/org/maintenance/unaware"
+  # - "#needs/detail"
+  # - "#status/complete"
+  # - "#ready/yes"
+---
+
+>[!info|clean no-t no-i]
+> > [!infobox|right wsmall]
+> > # `VIEW[{name}]`
+> > ![[place-holder-image.png|cover wmedium]] <!-- Assuming this image path is correct -->
+> > # `VIEW[{public_name}]`
+> >
+> > ~~~meta-bind
+> > INPUT[select(
+> > option(1, Bio),
+> > option(2, Stats),
+> > class(tabbed)
+> > )]
+> > ~~~
+> >
+> > > [!tabbed-box]
+> > >
+> > > > [!div|div]
+> > > > |Type| Stat |
+> > > > | ----------------------------------------------------- | -------------------------------------------------------- |
+> > > > | <span style="font-size: 14px;">**Public ID**</span>      | `VIEW[{public_name}]`                                                       |
+> > > > | <span style="font-size: 14px;">**Alias**</span>      | • `=replace(join((this.aliases), ","),",","<BR> •")`                    |
+> > > > | <span style="font-size: 14px;">**Status**</span>      | `VIEW[{status}]`                                                                |
+> > > > | <span style="font-size: 14px;">**Lethality Code**</span>  | `VIEW[{lethality}]`               |
+> > > > | <span style="font-size: 14px;">**Occupation**</span>  | • `=replace(join(link(this.job), ","),",","<BR> • ")`               |
+> > > > | <span style="font-size: 14px;">**Species**</span>     | `VIEW[\[\[{species}\]\]][text(renderMarkdown)]`               |
+> > > > | <span style="font-size: 14px;">**Age**</span>         | `VIEW[{age}]`                                                                      |
+> > > > | <span style="font-size: 14px;">**Sex**</span>         | `VIEW[{sex}]`                                                                      |
+> > > > | <span style="font-size: 14px;">**Height**</span>      | `VIEW[{physical_description.height}]`                                                                |
+> > > > | <span style="font-size: 14px;">**Weight**</span>      | `VIEW[{physical_description.weight}]`                                                               |
+> > > > | <span style="font-size: 14px;">**Eye Color**</span>   | `VIEW[{physical_description.eye_color}]`                                                          |
+> > > > | <span style="font-size: 14px;">**Hair Color**</span>  | `VIEW[{physical_description.hair_color}]`                                                          |
+> > > > | <span style="font-size: 14px;">**MBTI type**</span>   | `VIEW[{mbti_type}]`                                                         |
+> > > > | <span style="font-size: 14px;">**Personality**</span> | •`=replace(join((this.personality), ","),",","<BR> •")`                 |
+> > > > | <span style="font-size: 14px;">**Languages**</span>   | `=join(map(this.languages, (l) => "• " + l), "<br>")`                          |
+> > > > # <span style="font-size: 15px;">Power Scale System</span>
+> > > > | Attribute | Rating | Representation |
+> > > > |-----------|--------|----------------|
+> > > > | Strength | `VIEW[{power_ratings.strength}]` | `VIEW["█".repeat({power_ratings.strength})]` |
+> > > > | Intelligence | `VIEW[{power_ratings.intelligence}]` | `VIEW["█".repeat({power_ratings.intelligence})]` |
+> > > > | Speed | `VIEW[{power_ratings.speed}]` | `VIEW["█".repeat({power_ratings.speed})]` |
+> > > > | Durability | `VIEW[{power_ratings.durability}]` | `VIEW["█".repeat({power_ratings.durability})]` |
+> > > > | Energy Projection | `VIEW[{power_ratings.energy_projection}]` | `VIEW["█".repeat({power_ratings.energy_projection})]` |
+> > > > | Fighting Skills | `VIEW[{power_ratings.fighting_skills}]` | `VIEW["█".repeat({power_ratings.fighting_skills})]` |
+> > > > | X-Factor | `VIEW[{power_ratings.x-factor}]` | `VIEW["█".repeat({power_ratings.x-factor})]` |
+> > >
+> > > > [!div]
+> > > > # <span style="font-size: 18px;">Stat Block (Hero System 6e)</span>
+> > > > # <span style="font-size: 15px;">Characteristics</span>
+> > > > | **STR** | **DEX** | **CON** |
+> > > > |:-----:|:-----:|:-----:|
+> > > > |  `VIEW[{attributes.STR}]` (`VIEW[ceil(9+({attributes.STR}/5))]`-) | `VIEW[{attributes.DEX}]` (`VIEW[ceil(9+({attributes.DEX}/5))]`-) | `VIEW[{attributes.CON}]` (`VIEW[ceil(9+({attributes.CON}/5))]`-) |
+> > > > | **INT** | **EGO** | **PRE** |
+> > > > |  `VIEW[{attributes.INT}]` (`VIEW[ceil(9+({attributes.INT}/5))]`-) | `VIEW[{attributes.EGO}]` (`VIEW[ceil(9+({attributes.EGO}/5))]`-) |  `VIEW[{attributes.PRE}]` (`VIEW[ceil(9+({attributes.PRE}/5))]`-) |
+> > > > # <span style="font-size: 15px;">Speed</span>
+> > > > | **SPD** | **Phases** |
+> > > > |: --- :|: --- :|
+> > > > | `VIEW[{spd}]` | `VIEW[{spd} == 1 ? "7" : {spd} == 2 ? "6, 12" : {spd} == 3 ? "4, 8, 12" : {spd} == 4 ? "3, 6, 9, 12" : {spd} == 5 ? "3, 5, 8, 10, 12" : {spd} == 6 ? "2, 4, 6, 8, 10, 12" : {spd} == 7 ? "2, 4, 6, 7, 9, 11, 12" : {spd} == 8 ? "2, 3, 5, 6, 8, 9, 11, 12" : {spd} == 9 ? "2, 3, 4, 6, 7, 8, 10, 11, 12" : {spd} == 10 ? "2, 3, 4, 5, 6, 8, 9, 10, 11, 12" : {spd} == 11 ? "2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12" : {spd} == 12 ? "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12" : "Invalid SPD"]` |
+> > > > # <span style="font-size: 15px;">Combat Values</span>
+> > > > | OCV | DCV | OMCV | DMCV |
+> > > > |:----:|:----:|:----:|:----:|
+> > > > |`VIEW[{combat_values.OCV}]`| `VIEW[{combat_values.DCV}]`| `VIEW[{combat_values.OMCV}]`| `VIEW[{combat_values.DMCV}]`|
+> > > > # <span style="font-size: 15px;">Defense Values</span>
+> > > > | PD | ED | rPD | rED |
+> > > > |:----:|:----:|:----:|:----:|
+> > > > |`VIEW[{defense_values.PD}]`| `VIEW[{defense_values.ED}]`| `VIEW[{defense_values.rPD}]`| `VIEW[{defense_values.rED}]`|
+> > > > # <span style="font-size: 15px;">Health Values</span>
+> > > > | BODY | STUN |
+> > > > |: --- :|: --- :|
+> > > > | `VIEW[{health_values.BODY}]`  | `VIEW[{health_values.STUN}]`  |
+> > > > # <span style="font-size: 15px;">Recovery & Endurance</span>
+> > > > | REC | END |
+> > > > |: --- :|: --- :|
+> > > > | `VIEW[{recovery_endurance.REC}]` | `VIEW[{recovery_endurance.END}]` |
+> > > > # <span style="font-size: 15px;">Movement</span>
+> > > > | Movement  | Meters/Phase  |
+> > > > |-----------|---|
+> > > > | Running   | `VIEW[{movement.running}]`m  |
+> > > > | Leaping   | `VIEW[{movement.leaping}]`m  |
+> > > > | Swimming  | `VIEW[{movement.swimming}]`m  |
+> 
+> 
+> # Important Information:
+> 1. **Information:** Details
+> 2. **Information:** Details
+> 3. **Information:** Details
+> 4. **Information:** Details
+> 5. **Information:** Details
+> 6. **Information:** Details
+> 7. **Information:** Details
+> 8. **Information:** Details
+> 
+> # Background/History:
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin ante nec mi maximus ultricies. Quisque convallis aliquet magna, sit amet semper enim sollicitudin at. Curabitur in ipsum vitae nulla efficitur convallis ac non leo. Sed sit amet tempor ex. Donec eu magna ullamcorper, imperdiet arcu ut, ullamcorper metus. Vestibulum ac lectus et leo fermentum dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec tempus quam nec augue mollis cursus. Etiam purus tellus, rutrum non convallis sed, scelerisque quis odio. Cras cursus ut lacus non faucibus.
+> 
+> Fusce dignissim, justo eu gravida ultrices, quam sapien pellentesque dui, et pellentesque augue ipsum in quam. Maecenas nec dui consequat enim euismod faucibus. Praesent ut eros ornare, posuere erat id, ultrices magna. Nullam viverra feugiat tempor. Vestibulum lorem sapien, blandit quis lobortis rutrum, gravida eget erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer cursus turpis leo, vel commodo urna facilisis non. Sed mollis mauris orci, eu laoreet odio aliquam quis.
+> 
+> ## Relationships/Connections:
+> - **Example:** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin ante nec mi maximus ultricies. Quisque convallis aliquet magna, sit amet semper enim sollicitudin at. Curabitur in ipsum vitae nulla efficitur convallis ac non leo. Sed sit amet tempor ex. Donec eu magna ullamcorper, imperdiet arcu ut, ullamcorper metus. Vestibulum ac lectus et leo fermentum dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec tempus quam nec augue mollis cursus. Etiam purus tellus, rutrum non convallis sed, scelerisque quis odio. Cras cursus ut lacus non faucibus.
+> - **Example:** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin ante nec mi maximus ultricies. Quisque convallis aliquet magna, sit amet semper enim sollicitudin at. Curabitur in ipsum vitae nulla efficitur convallis ac non leo. Sed sit amet tempor ex. Donec eu magna ullamcorper, imperdiet arcu ut, ullamcorper metus. Vestibulum ac lectus et leo fermentum dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec tempus quam nec augue mollis cursus. Etiam purus tellus, rutrum non convallis sed, scelerisque quis odio. Cras cursus ut lacus non faucibus.
+> 
+> # Appearance
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin ante nec mi maximus ultricies. Quisque convallis aliquet magna, sit amet semper enim sollicitudin at. Curabitur in ipsum vitae nulla efficitur convallis ac non leo. Sed sit amet tempor ex. Donec eu magna ullamcorper, imperdiet arcu ut, ullamcorper metus. Vestibulum ac lectus et leo fermentum dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec tempus quam nec augue mollis cursus. Etiam purus tellus, rutrum non convallis sed, scelerisque quis odio. Cras cursus ut lacus non faucibus.
+
+# Powers/Tactics/Abilities/Gear:
+## Powers 
+Only do sub bullets for powers and other things that come from another power or skill or weakness or anything else in the various sections. I just did this to give an example of how many levels of sub bullets you can do. At no point should you ever put an empty line between bullet points or break any of these sections into small sections
+
+- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+	- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+		- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+			- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+				- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+
+## Weaknesses
+- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+
+## Abilities 
+- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+	- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+		- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+			- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+				- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+
+## Gear
+- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+	- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+		- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+			- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+				- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+
+## Tactics
+- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+	- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+		- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+			- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+				- **Example:** Lorem ipsum odor amet, consectetuer adipiscing elit. Massa suspendisse duis suspendisse sit vehicula dictumst eros. Dapibus laoreet urna ipsum mi lectus justo. Interdum integer suscipit fames curabitur eros condimentum eu sit quisque. Aliquam porttitor curabitur dapibus hendrerit sit.
+
+
+# RP Notes:
+Lorem ipsum odor amet, consectetuer adipiscing elit. Curae bibendum vulputate semper imperdiet feugiat pretium vehicula. Mollis convallis nunc velit orci risus convallis ut eleifend. Dictum quisque porta nisl, massa feugiat primis torquent. Dignissim nibh sodales consequat semper dictum posuere class vestibulum. Hac ornare suspendisse mus, nullam sagittis platea maecenas. Quis auctor sollicitudin proin ridiculus ornare gravida. Nostra porttitor per tincidunt nisl leo ac libero. Pretium venenatis laoreet etiam dis metus lectus. Auctor dapibus vehicula convallis platea lectus.
+
+Mauris fusce amet porta duis maximus quam; ipsum posuere ridiculus. Primis suspendisse etiam laoreet nostra; urna ultricies vehicula nostra. Erat enim interdum blandit vel convallis interdum. Egestas torquent netus fringilla nostra nostra. Purus natoque conubia suspendisse ac maecenas. Potenti augue lorem neque ligula duis, amet lorem. Ante ullamcorper montes nullam ante aenean justo aptent fringilla. Porta volutpat lobortis dignissim maecenas dictumst.
+
+##  Personality:
+Lorem ipsum odor amet, consectetuer adipiscing elit. Curae bibendum vulputate semper imperdiet feugiat pretium vehicula. Mollis convallis nunc velit orci risus convallis ut eleifend. Dictum quisque porta nisl, massa feugiat primis torquent. Dignissim nibh sodales consequat semper dictum posuere class vestibulum. Hac ornare suspendisse mus, nullam sagittis platea maecenas. Quis auctor sollicitudin proin ridiculus ornare gravida. Nostra porttitor per tincidunt nisl leo ac libero. Pretium venenatis laoreet etiam dis metus lectus. Auctor dapibus vehicula convallis platea lectus.
+
+Mauris fusce amet porta duis maximus quam; ipsum posuere ridiculus. Primis suspendisse etiam laoreet nostra; urna ultricies vehicula nostra. Erat enim interdum blandit vel convallis interdum. Egestas torquent netus fringilla nostra nostra. Purus natoque conubia suspendisse ac maecenas. Potenti augue lorem neque ligula duis, amet lorem. Ante ullamcorper montes nullam ante aenean justo aptent fringilla. Porta volutpat lobortis dignissim maecenas dictumst.
+
+##  Motivations/Goals:
+Lorem ipsum odor amet, consectetuer adipiscing elit. Curae bibendum vulputate semper imperdiet feugiat pretium vehicula. Mollis convallis nunc velit orci risus convallis ut eleifend. Dictum quisque porta nisl, massa feugiat primis torquent. Dignissim nibh sodales consequat semper dictum posuere class vestibulum. Hac ornare suspendisse mus, nullam sagittis platea maecenas. Quis auctor sollicitudin proin ridiculus ornare gravida. Nostra porttitor per tincidunt nisl leo ac libero. Pretium venenatis laoreet etiam dis metus lectus. Auctor dapibus vehicula convallis platea lectus.
+
+Mauris fusce amet porta duis maximus quam; ipsum posuere ridiculus. Primis suspendisse etiam laoreet nostra; urna ultricies vehicula nostra. Erat enim interdum blandit vel convallis interdum. Egestas torquent netus fringilla nostra nostra. Purus natoque conubia suspendisse ac maecenas. Potenti augue lorem neque ligula duis, amet lorem. Ante ullamcorper montes nullam ante aenean justo aptent fringilla. Porta volutpat lobortis dignissim maecenas dictumst.
+
+##  Quirks/Habits:
+Lorem ipsum odor amet, consectetuer adipiscing elit. Curae bibendum vulputate semper imperdiet feugiat pretium vehicula. Mollis convallis nunc velit orci risus convallis ut eleifend. Dictum quisque porta nisl, massa feugiat primis torquent. Dignissim nibh sodales consequat semper dictum posuere class vestibulum. Hac ornare suspendisse mus, nullam sagittis platea maecenas. Quis auctor sollicitudin proin ridiculus ornare gravida. Nostra porttitor per tincidunt nisl leo ac libero. Pretium venenatis laoreet etiam dis metus lectus. Auctor dapibus vehicula convallis platea lectus.
+
+Mauris fusce amet porta duis maximus quam; ipsum posuere ridiculus. Primis suspendisse etiam laoreet nostra; urna ultricies vehicula nostra. Erat enim interdum blandit vel convallis interdum. Egestas torquent netus fringilla nostra nostra. Purus natoque conubia suspendisse ac maecenas. Potenti augue lorem neque ligula duis, amet lorem. Ante ullamcorper montes nullam ante aenean justo aptent fringilla. Porta volutpat lobortis dignissim maecenas dictumst.
+
+## Dialogue Style:
+Lorem ipsum odor amet, consectetuer adipiscing elit. Curae bibendum vulputate semper imperdiet feugiat pretium vehicula. Mollis convallis nunc velit orci risus convallis ut eleifend. Dictum quisque porta nisl, massa feugiat primis torquent. Dignissim nibh sodales consequat semper dictum posuere class vestibulum. Hac ornare suspendisse mus, nullam sagittis platea maecenas. Quis auctor sollicitudin proin ridiculus ornare gravida. Nostra porttitor per tincidunt nisl leo ac libero. Pretium venenatis laoreet etiam dis metus lectus. Auctor dapibus vehicula convallis platea lectus.
+
+Mauris fusce amet porta duis maximus quam; ipsum posuere ridiculus. Primis suspendisse etiam laoreet nostra; urna ultricies vehicula nostra. Erat enim interdum blandit vel convallis interdum. Egestas torquent netus fringilla nostra nostra. Purus natoque conubia suspendisse ac maecenas. Potenti augue lorem neque ligula duis, amet lorem. Ante ullamcorper montes nullam ante aenean justo aptent fringilla. Porta volutpat lobortis dignissim maecenas dictumst.
+
+### Quotes The Character Always Says
+
+
+# Artwork
+
+# Full Character Sheet:
